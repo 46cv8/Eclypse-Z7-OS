@@ -27,20 +27,33 @@
 	usb-phy = <&usb_phy0>;
 };
 
+&ZmodDAC_0_AXI_ZmodDAC1411_v1_0_0 {
+	compatible = "generic-uio";
+};
+
 &amba_pl {
-	axidma_chrdev_0: axidma_chrdev@0 {
+	axidma_chrdev_1: axidma_chrdev@1 {
 		compatible = "xlnx,axidma-chrdev";
-		dmas = <&axi_dma_0 0 &axi_dma_0 1>;
-		dma-names = "tx_channel", "rx_channel";
+		dmas = <&ZmodDAC_0_axi_dma_ch1 0>;
+		dma-names = "tx_channel";
+		index = <0>;
+	};
+	axidma_chrdev_2: axidma_chrdev@2 {
+		compatible = "xlnx,axidma-chrdev";
+		dmas = <&ZmodDAC_0_axi_dma_ch2 0>;
+		dma-names = "tx_channel";
 		index = <0>;
 	};
 };
 
-&axi_dma_0{
+&ZmodDAC_0_axi_dma_ch1{
 	dma-channel@40400000 {
 		xlnx,device-id = <0x0>;
 	};
-	dma-channel@40400030 {
+};
+
+&ZmodDAC_0_axi_dma_ch2{
+	dma-channel@40410000 {
 		xlnx,device-id = <0x1>;
 	};
 };
