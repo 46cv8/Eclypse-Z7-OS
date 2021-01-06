@@ -1,0 +1,3 @@
+[submodule "xilinx_axidma"]
+	path = custom_modules/xilinx_axidma
+	url = https://github.com/46cv8/xilinx_axidma
