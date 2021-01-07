@@ -32,17 +32,17 @@
 };
 
 &amba_pl {
-	axidma_chrdev_1: axidma_chrdev@1 {
+	axidma_chrdev_0: axidma_chrdev@0 {
 		compatible = "xlnx,axidma-chrdev";
 		dmas = <&ZmodDAC_0_axi_dma_ch1 0>;
 		dma-names = "tx_channel";
 		index = <0>;
 	};
-	axidma_chrdev_2: axidma_chrdev@2 {
+	axidma_chrdev_1: axidma_chrdev@1 {
 		compatible = "xlnx,axidma-chrdev";
 		dmas = <&ZmodDAC_0_axi_dma_ch2 0>;
 		dma-names = "tx_channel";
-		index = <0>;
+		index = <1>;
 	};
 };
 
